@@ -127,6 +127,19 @@
   font-weight: 500 !important;
 }
 
+.section3 .three .right button {
+  border: 1px solid rgba(128, 128, 128, 0.337);
+  border-radius: 50%;
+  padding: 40px 25px;
+  background-color: #fff;
+  transition: all ease .5s;
+}
+
+.section3 .three .right button:hover {
+  background: #000;
+  color: #fff;
+}
+
 .section3 .three .left video {
   width: 80%;
   height: 80%;

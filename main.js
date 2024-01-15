@@ -65,3 +65,23 @@ function section2() {
   });
 }
 section2();
+
+// *************************  section 3 animation *************************************
+
+function section3() {
+  let sectionThree = document.querySelector(".section3");
+  let cursor = document.querySelector(".cursor");
+  let body = document.querySelector("body");
+  sectionThree.addEventListener("mouseenter", () => {
+    gsap.to(cursor, {
+      backgroundColor: "#000",
+    });
+  });
+  sectionThree.addEventListener("mouseleave", () => {
+    gsap.to(cursor, {
+      backgroundColor: "#fff",
+    });
+  });
+}
+
+section3();

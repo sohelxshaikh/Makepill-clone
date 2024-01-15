@@ -69,19 +69,20 @@ section2();
 // *************************  section 3 animation *************************************
 
 function section3() {
-  let sectionThree = document.querySelector(".section3");
   let cursor = document.querySelector(".cursor");
-  let body = document.querySelector("body");
+  let sectionThree = document.querySelector(".section3");
+
+  // NOW WE WANT TO CHANGE OUR CURSOR TO BLACK WHEN IT ENTER TO SECTION3
+
   sectionThree.addEventListener("mouseenter", () => {
     gsap.to(cursor, {
-      backgroundColor: "#000",
+      background: "#0f0f0f",
     });
   });
   sectionThree.addEventListener("mouseleave", () => {
     gsap.to(cursor, {
-      backgroundColor: "#fff",
+      background: "#fff",
     });
   });
 }
-
 section3();

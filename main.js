@@ -30,3 +30,38 @@ function section1() {
 }
 cursor();
 section1();
+
+// *************************  section 2 animation *************************************
+
+function section2() {
+  let body = document.querySelector("body");
+  let cursor = document.querySelector(".cursor");
+  let sectionTwo = document.querySelector(".section2");
+  sectionTwo.addEventListener("mouseenter", () => {
+    gsap.to(cursor, {
+      height: "100px",
+      width: "100px",
+      innerHTML: "<i class='fa-solid fa-volume-high'></i>",
+      color: "black",
+      fontSize: "25px",
+      margin: "20px",
+    });
+    gsap.to(body, {
+      background: "#0f0f0f",
+      color: "#fff",
+    });
+  });
+  sectionTwo.addEventListener("mouseleave", () => {
+    gsap.to(cursor, {
+      height: "18px",
+      width: "18px",
+      margin: 0,
+      innerHTML: "",
+    });
+    gsap.to(body, {
+      background: "#fff",
+      color: "#000",
+    });
+  });
+}
+section2();

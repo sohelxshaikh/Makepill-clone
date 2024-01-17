@@ -86,3 +86,73 @@ function section3() {
   });
 }
 section3();
+
+function section4() {
+  let sectionFour = document.querySelector(".section4");
+  let cursor = document.querySelector(".cursor");
+  sectionFour.addEventListener("mouseenter", () => {
+    cursor.style.background = "#0f0f0f";
+  });
+  gsap.to(sectionFour, {
+    background: "#0f0f0f",
+    color: "white",
+
+    scrollTrigger: {
+      trigger: ".section4 .four .moving-text",
+      start: "bottom center",
+      end: "botttom center",
+      scrub: 2,
+    },
+  });
+  gsap.to(".services", {
+    color: "white",
+    scrollTrigger: {
+      trigger: ".section4 .four .moving-text",
+      start: "bottom center",
+      end: "botttom center",
+      scrub: 2,
+      // markers: true,
+    },
+  });
+  sectionFour.addEventListener("mouseenter", () => {
+    gsap.to(cursor, {
+      background: "white",
+      scrollTrigger: {
+        trigger: ".section4 .four .moving-text",
+        start: "bottom center",
+        end: "bottom center",
+        scrub: 0.1,
+        // markers: true,
+      },
+    });
+  });
+
+  // **************** Project *******************
+  let parentEl = document.querySelector(".bg");
+  let childEl = document.querySelectorAll(".first-project .first");
+  childEl.forEach((item) => {
+    item.addEventListener("mouseenter", () => {
+      let ids = item.getAttribute("data-id");
+      let bgEl = document.querySelector(`.id-${ids}`);
+      // console.log(bgEl);
+
+      parentEl.querySelectorAll("video").forEach((video) => {
+        video.style.display = "none";
+      });
+      bgEl.style.display = "block";
+      gsap.to(".cursor", {
+        height: "120px",
+        width: "120px",
+        innerHTML: "<p>See Project</p>",
+      });
+    });
+    item.addEventListener("mouseleave", () => {
+      gsap.to(".cursor", {
+        height: "18px",
+        width: "18px",
+        innerHTML: "",
+      });
+    });
+  });
+}
+section4();

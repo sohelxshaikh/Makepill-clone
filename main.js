@@ -141,8 +141,8 @@ function section4() {
       });
       bgEl.style.display = "block";
       gsap.to(".cursor", {
-        height: "120px",
-        width: "120px",
+        height: "100px",
+        width: "100px",
         innerHTML: "<p>See Project</p>",
       });
     });
@@ -151,8 +151,88 @@ function section4() {
         height: "18px",
         width: "18px",
         innerHTML: "",
+        duration: 0.1,
+        margin: 0,
       });
     });
   });
 }
 section4();
+
+function section5() {
+  let sectionFive = document.querySelector(".section5");
+  let cursor = document.querySelector(".cursor");
+
+  // FOR CHANGING OUR CURSOR COLOR TO BLACK
+
+  sectionFive.addEventListener("mouseenter", () => {
+    gsap.to(cursor, {
+      background: "#0f0f0f",
+      duration: 0.1,
+    });
+  });
+
+  gsap.from(".section5 .five .left h1, .section5 .five .left h5", {
+    y: 100,
+    opacity: 0,
+    stagger: 1,
+    duration: 3,
+
+    scrollTrigger: {
+      trigger: ".section5 .five",
+      start: "top 60%",
+      end: "top 30%",
+      scrub: 1,
+    },
+  });
+}
+section5();
+
+// =========================SECTION7 ANIMATIONS-====================
+
+function section7() {
+  let cursor = document.querySelector(".cursor");
+  let body = document.querySelector("body");
+  let sectionSeven = document.querySelector(".section7");
+
+  gsap.to(body, {
+    background: "#0f0f0f",
+    color: "white",
+    scrollTrigger: {
+      trigger: ".section6 .right",
+      start: "bottom 60%",
+      end: "bottom 40%",
+      scrub: 1,
+    },
+  });
+
+  // LET CHANGE OUR CURSOR TO WHITE WHEN BACKGROUND IS BLACK
+
+  sectionSeven.addEventListener("mouseenter", () => {
+    gsap.to(cursor, {
+      background: "white",
+      duration: 0.1,
+      scrollTrigger: {
+        trigger: ".section6 .right",
+        start: "bottom 60%",
+        end: "bottom 40%",
+        scrub: 1,
+      },
+    });
+  });
+
+  // LET CHANGE OUR CURSOR TO balc WHEN BACKGROUND IS white
+  sectionSeven.addEventListener("mouseleave", () => {
+    gsap.to(cursor, {
+      background: "black",
+      duration: 0.1,
+      scrollTrigger: {
+        trigger: ".section5 .right",
+        start: "bottom 60%",
+        end: "bottom 40%",
+        scrub: 1,
+      },
+    });
+  });
+}
+section7();
